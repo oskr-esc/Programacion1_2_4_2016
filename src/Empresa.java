@@ -14,10 +14,31 @@ public class Empresa {
     public static void main(String[] args) {
         nombre = "UNITEC";
         
-        Empleado em = new Empleado(1,"Andres"); 
-        Empleado em2 = new Empleado(2,"Cristhian");
+        Empleado em = new Empleado(1,"Andres",5000); 
+        Empleado em2 = new Empleado(2);
         
-        System.out.println("em1: "+em.numero+"-"+em.nombre
-                +" em2: "+em2.numero+"-"+em2.nombre);
+        em2.setNombre("Esther");
+        em2.setSalario(7000);
+        
+        em.print();
+        em2.print();
+        
+        if(em.getNumero() == 1){
+            System.out.println("SI ES IGUAL A 1!");
+        }
+        
+        if(em2.getNombre().equalsIgnoreCase("ESTHER")){
+            System.out.println("SI es Esther!");
+        }
+        
+        System.out.println("Pago de Em: "+em.pago());
+        
+        if(em2 != null){
+            System.out.println("NO es nulo!");
+            em2 = null;
+        }
+        
+        Empleado em3 = null; 
+        em3.print();
     }
 }
